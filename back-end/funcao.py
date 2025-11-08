@@ -51,11 +51,31 @@ def listar_produto():
         finally:
             cursor.close()
             conexao.close()
-            
-listar_produto()
+
+#listar_produto()
   
-        
-            
+def atualizar_produtos(preco, id,):
+    conexao, cursor = conector()
+    if conexao:
+        try:
+            cursor.execute(
+                "UPDATE produtos SET preco = %s WHERE id = %s",
+                (preco, id)
+            )
+            conexao.commit()
+        except Exception as erro:
+            print(f"Erro ao atualizar o produto: {erro}")
+        finally:
+            cursor.close()
+            conexao.close()
+
+atualizar_produtos(40, 1)
+
+
+
+
+
+
                            
                            
                            
