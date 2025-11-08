@@ -20,7 +20,27 @@ def criar_tabela():
             cursor.close()
             conexao.commit()
 
-       
+def adicionar_produto(nome, categoria, preco, quantidade):
+    conexao, cursor = conector()
+    if conexao:
+        try:
+            cursor.execute(
+                "INSERT INTO produtos (nome, categoria, preco, quantidade) VALUES (%s, %s, %s, %s)",
+                (nome, categoria, preco, quantidade)
+                )
+            conexao.commit()
+        except Exception as erro:
+            print(f"Erro ao adicionar o filme {erro}")
+        finally:
+            cursor.close()
+            conexao.commit()
+
+adicionar_produto("contra file", "carne vermelha", 50.00, 20)
+
+
+  
+        
+            
                            
                            
                            
