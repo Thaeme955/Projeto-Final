@@ -1,7 +1,7 @@
 from conexao import conector 
 
 def criar_tabela():
-    conexao, cursor = conector()
+    conexao,cursor = conector()
     if conexao:
         try:
             cursor.execute("""
@@ -19,6 +19,7 @@ def criar_tabela():
         finally:
             cursor.close()
             conexao.commit()
+#criar_tabela()
 
 def adicionar_produto(nome, categoria, preco, quantidade):
     conexao, cursor = conector()
@@ -35,7 +36,7 @@ def adicionar_produto(nome, categoria, preco, quantidade):
             cursor.close()
             conexao.commit()
 
-#adicionar_produto("contra file", "carne vermelha", 50.00, 20)
+#adicionar_produto("frango", "carne branca", 20.00, 19)
 
 def listar_produto():
     conexao, cursor = conector()
@@ -69,9 +70,25 @@ def atualizar_produtos(preco, id,):
             cursor.close()
             conexao.close()
 
-atualizar_produtos(40, 1)
+#atualizar_produtos(40, 1)
 
 
+def deletar_produtos(id):
+    conexao,cursor = conector()
+    if conexao:
+        try:
+            cursor.execute(
+                "DELETE FROM produtos WHERE id = %s",
+                (id,)
+            )
+            conexao.commit()
+        except Exception as erro:
+            print(f"Produto removido: {erro}")
+        finally:
+            cursor.close()
+            conexao.close()
+
+deletar_produtos(1)
 
 
 
