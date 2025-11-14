@@ -55,13 +55,13 @@ def listar_produto():
 
 #listar_produto()
   
-def atualizar_produtos(preco, id,):
+def atualizar_produtos(id, quantidade):
     conexao, cursor = conector()
     if conexao:
         try:
             cursor.execute(
-                "UPDATE produtos SET preco = %s WHERE id = %s",
-                (preco, id)
+                "UPDATE produtos SET quantidade = %s WHERE id = %s",
+                (quantidade, id)
             )
             conexao.commit()
         except Exception as erro:
