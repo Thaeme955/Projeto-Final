@@ -12,7 +12,7 @@
   
 
 
-🚀 Tecnologias Utilizadas
+# 🚀 Tecnologias Utilizadas
 
 BACK-END
 
@@ -32,7 +32,7 @@ FRONT-END
 
 
 
-*Instalar dependência
+# Instalar dependência
 
  pip install fastapi uvicorn psycopg2 python-dotenv streamlit requests
 
@@ -50,7 +50,7 @@ DB_PORT=5432
 
 
 
-*Banco de Dados
+# Banco de Dados
 
 criar_tabela()
 
@@ -65,7 +65,7 @@ quantidade   INTEGER	   Quantidade em estoque
 
 
 
-🧠 Funcionalidades (CRUD)
+# Funcionalidades (CRUD)
 
 ✔ Criar produtos
 ✔ Listar produtos
@@ -79,7 +79,7 @@ Tudo isso via funções do arquivo funcao.py.
 
 
 
-📡 Rotas da API (FastAPI)
+# Rotas da API (FastAPI)
 
 GET /
 
@@ -118,7 +118,7 @@ Parâmetros:
 
 
 
-▶️Como Rodar o Back-end (API)
+# ▶️Como Rodar o Back-end (API)
 
 uvicorn back-end.main:app --reload
 
@@ -130,7 +130,7 @@ A API abrirá em:
 
 
 
-💻 Como Rodar o Front-end (Streamlit)
+# 💻 Como Rodar o Front-end (Streamlit)
 
 python -m streamlit run front-end/app.py
 
@@ -138,19 +138,19 @@ python -m streamlit run front-end/app.py
 
 
 
-🖥️ Interface (Streamlit)
+# 🖥️ Interface (Streamlit)
 
 A interface contém:
 
-🔍 Catálogo de produtos
+# 🔍 Catálogo de produtos
 
 Tabela com todos os produtos cadastrados.
 
-➕ Cadastrar produto
+# ➕ Cadastrar produto
 
 Formulário de inclusão.
 
-❌ Deletar produto
+# ❌ Deletar produto
 
 Remove produtos pelo ID.
 
