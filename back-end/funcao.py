@@ -36,7 +36,7 @@ def adicionar_produto(nome, categoria, preco, quantidade):
             cursor.close()
             conexao.commit()
 
-#adicionar_produto("frango", "carne branca", 20.00, 19)
+#adicionar_produto("contra filé", "carne vermelha", 50.00, 25)
 
 def listar_produto():
     conexao, cursor = conector()
@@ -88,10 +88,26 @@ def deletar_produtos(id):
             cursor.close()
             conexao.close()
 
-deletar_produtos(1)
+#deletar_produtos(1)
 
 
+def buscar_produtos(id):
+    conexao, cursor = conector()
+    if conexao:
+        try:
+            cursor.execute(
+                "SELECT * FROM produtos WHERE id = %s",
+                (id,)
+            )
+            return cursor.fetchone()
+        except Exception as erro:
+            print(f"Erro ao buscar produto: {erro}")
+            return[]
+        finally:
+            cursor.close()
+            conexao.close()
 
+buscar_produtos(2)
 
                            
                            
